@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tub 'N Cup Booking</title>
+    <link rel="stylesheet" href="booking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="icons/tnclogo.PNG" class="logo" alt="">
+            <nav>
+                <ul>
+                    <li><a href="../Landing/try.html">Home</a></li>
+                    <li><a href="booking.html"><b>Reserve a Schedule</b></a></li>
+                    <li><a href="../Cafe/cafeordering.html">Cafe Order</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="image-container">
+            <img src="icons/paw.png" style="width: 100px; height: 100px;" src="https://via.placeholder.com/100x100"
+                alt="Paw Image" />
+        </div>
+
+        <div class="booking-form">
+            <h2>BOOKING FORM</h2>
+            <hr style="border: 3px solid #e4c267; margin: 20px 0;">
+            <form action="#" method="post">
+                <label for="owner-name">NAME OF OWNER:</label>
+                <input type="text" id="owner-name" name="owner-name" required>
+
+                <label for="pet-name">PET NAME:</label>
+                <input type="text" id="pet-name" name="pet-name" required>
+
+                <label for="breed">BREED:</label>
+                <input type="text" id="breed" name="breed" required>
+
+                <label for="mobile">MOBILE NUMBER:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+
+                <label for="reserve-date">RESERVE DATE:</label>
+                <input type="date" id="reserve-date" name="reserve-date" required>
+
+                <label for="reserve-time">RESERVE TIME:</label>
+                <select id="reserve-time" name="reserve-time" required>
+                    <option value="">Select a time</option>
+                    <!-- Morning times -->
+                    <option value="9:00am">9:00 AM</option>
+                    <option value="9:30am">9:30 AM</option>
+                    <option value="10:00am">10:00 AM</option>
+                    <option value="10:30am">10:30 AM</option>
+                    <option value="11:00am">11:00 AM</option>
+                    <option value="11:30am">11:30 AM</option>
+                    <!-- Afternoon to evening times -->
+                    <option value="1:00pm">1:00 PM</option>
+                    <option value="1:30pm">1:30 PM</option>
+                    <option value="2:30pm">2:30 PM</option>
+                    <option value="3:00pm">3:00 PM</option>
+                    <option value="4:00pm">4:00 PM</option>
+                    <option value="4:30pm">4:30 PM</option>
+                    <option value="5:30pm">5:30 PM</option>
+                    <option value="6:00pm">6:00 PM</option>
+                    <option value="6:30pm">6:30 PM</option>
+                    <option value="7:00pm">7:00 PM</option>
+                </select>
+                <label for="groomer">GROOMER PREFERENCE:</label>
+                <select id="groomer" name="groomer">
+                    <option value="any">Any</option>
+                    <option value="groomer1">Aries</option>
+                    <option value="groomer2">Dennis</option>
+                    <option value="groomer3">Swabe</option>
+                    <option value="groomer4">Mark</option>
+                </select>
+
+                <label for="note">NOTE:</label>
+                <textarea id="note" name="note" rows="3"></textarea>
+
+                <div class="button-container">
+                    <button type="submit">SUBMIT FORM</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <h4>Pet Owners and Non-Pet Owners are welcome!</h4>
+            <div class="socials">
+                <p>Contact Us! <br> 0917 310 3119</p>
+                <a href="https://maps.app.goo.gl/JrBTdXpnmwcuUUSd8"><img src="icons/pin.png"></a>
+                <a href="https://www.facebook.com/tubncup"><img src="icons/facebook.png"></a>
+                <a href="https://www.instagram.com/tubncup/"><img src="icons/instagram.png"></a>
+                <a href="https://www.tiktok.com/@tubncup"><img src="icons/tiktok.png"></a>
+            </div>
+
+        </footer>
+        <div class="foot">
+            <p>SERVING SINCE @2021</p>
+        </div>
+    </div>
+</body>
+
+</html>

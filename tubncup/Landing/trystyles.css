@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e4e1dd;
+}
+
+header {
+    background-color: #24201d; 
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fixed;
+    height: fit-content;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px;
+    font-size: 20px;
+    font-family:'Lucida Sans Unicode';
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 30px;
+}
+
+nav a {
+    color:#dabd4c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p {
+    font-size: 55px;
+	padding-top: 30px;
+}
+
+.button {
+    padding: 10px 30px;
+    padding-top: 5px;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-inline:100px;
+    margin-block: 20px;
+    margin-right: 100px;
+}
+
+.yellow {
+    background-color: #E4C267;
+    color: #000;
+    text-align: center;
+}
+
+.white {
+    background-color: #fff; 
+    color: #000; 
+    border: 2px solid #E4C267; 
+    margin-right: 100px;
+    margin-left: 275px;
+    text-align: center;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 8px;
+    width: 30%; 
+    float: right;
+    padding-top: 70px;
+    padding-right: 7%;
+}
+
+.image-container {
+    border: 5px solid #000000; 
+    border-radius: 5px; 
+    background-color: white;
+    padding: 5px; 
+}
+
+.bordered-image {
+    display: block; 
+    max-width: 100%; 
+    height: fixed;
+}
+
+.location {
+    display: flex;  
+    gap: 0px;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.location p {
+    margin: 0;
+    font-size: 25px;
+    padding: 30px;
+}
+
+.paw {
+    width: fixed;
+    padding-left: 25px;
+}
+
+.footnote {
+    text-align: center;
+    font-size: 10px;
+    color: #24201d;
+    padding: 10px;
+}
+
+.info {
+    background-color: #24201d; 
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: fixed;
+}
+
+.info p {
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.contact {
+    text-align: center;
+    font-size: 10px;
+    color: #24201d;
+    padding: 10px;
+}
+
