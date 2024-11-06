@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body class="">
     <header>
         <img src="icons/tnclogo.PNG" class="logo" alt="">
         <nav>
@@ -27,131 +27,156 @@
     </header>
     <br>
     <h1> MENU LIST</h1>
+    <div class="openCart">
+        <button class="opencartBtn"><img src="menu/shopping-cart.png"> Open Cart</button>
+    </div>
+
+    <div class="cartContainer">
+        <label id="myCart">Your Cart:</label>
+        <div class="cartList">
+            <div class="item">
+                <div class="image">
+                    <img src="menu/b1.jpg">
+                </div>
+                <div class="name">
+                    NAME
+                </div>
+                <div class="totalPrice">
+                    ₱89
+                </div>
+                <div class="quantity">
+                    <span class="minus">-</span>
+                    <span>1</span>
+                    <span class="plus">+</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="btn">
+            <button class="close">Close</button>
+            <button class="checkOut">Check Out</button>
+
+        </div>
+    </div>
     <h2>BAKERY</h2>
-    <div class="container">
-        <img id="menupic" src="menu/b1.jpg">
-        <p><b>GARLIC CREAM CHEESE BOMB</b></p>
-        <p id="price">89 PHP</p>
-        <button type="gcb" id="gcbcart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
-            Cart</button>
+    <div class="listProduct">
+        <div class="item">
+            <img id="menupic" src="menu/b1.jpg">
+            <p><b>GARLIC CREAM CHEESE BOMB</b></p>
+            <p id="price">₱89</p>
+            <button type="" id="b1" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+                Cart</button>
+        </div>
     </div>
-    <div class="container">
-        <img id="menupic" src="menu/b3.jpg">
-        <p><b>HAM & CHEESE SANDWICH</b></p>
-        <p id="price"><i>129 PHP</i></p>
+    <div class="listProduct">
+        <div class="item">
+            <img id="menupic" src="menu/b2.jpg">
+            <p><b>HAM & CHEESE SANDWICH</b></p>
+            <p id="price"><i>₱129</i></p>
+            <button type="" id="b2" class="cartbutton">
+                <img id="cart" src="menu/shopping-cart.png">Add to Cart</button>
+        </div>
+    </div>
+    <div class="listProduct">
+        <div class="item">
+            <img id="menupic" src="menu/b3.jpg">
+            <p><b>HAWAIIAN PIZZA</b></p>
+            <p id="price"><i>₱149 </i></p>
+            <BR>
+            <button type="" id="b3" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+                Cart</button>
+        </div>
 
-        <button type="hc" id="hccart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
-            Cart</button>
     </div>
-    <div class="container">
-        <img id="menupic" src="menu/b2.jpg">
-        <p><b>HAWAIIAN PIZZA</b></p>
-        <p id="price"><i>149 PHP</i></p>
-        <BR>
-
-        <button type="hp" id="hpcart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
-            Cart</button>
-    </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/B4.png">
         <p><b>FOUR CHEESE PIZZA</b></p>
-        <p id="price"><i>149 PHP</i></p>
+        <p id="price"><i>₱149</i></p>
         <BR>
-        <button type="fcp" id="fcpcart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <button type="fcp" id="b4" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/b5.jpg">
         <p><b>PEPPERONI PIZZA</b></p>
-        <p id="price"><i>149 PHP</i></p>
+        <p id="price"><i>₱149</i></p>
         <BR>
-        <button type="pp" id="ppcart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <button type="pp" id="b5" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/b6.jpg">
         <p><b>4pc. MOZZARELLA STICKS</b></p>
-        <p id="price"><i>99 PHP</i></p>
+        <p id="price"><i>₱99</i></p>
         <BR>
-        <button type="mozza" id="mozza" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <button type="mozza" id="b6" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
 
     <br> <br>
     <hr>
     <h2>FRAP</h2>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/f1.png">
         <p><b>CREME BRULEE LATTE FRAP</b></p>
-        <p id="price"><i>149 PHP - 22oz</i></p>
-        <button type="cbfrap" id="cbfrapcart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <p id="price"><i>₱149 - 22oz</i></p>
+        <button type="cbfrap" id="f1" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/f2.png">
         <p><b>RED VELVET LATTE FRAP</b></p>
-        <p id="price"><i>129 PHP - 22oz</i></p><br>
-        <button type="rvfrap" id="rvfrapcart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <p id="price"><i>₱129 - 22oz</i></p><br>
+        <button type="rvfrap" id="f2" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/f3.png">
         <p><b>CARAMEL LATTE FRAP</b></p>
-        <p id="price"><i>149 PHP - 22oz</i></p><br>
-        <button type="caramelfrap" id="caramelfrap" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add
+        <p id="price"><i>₱149 - 22oz</i></p><br>
+        <button type="caramelfrap" id="f3" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add
             to Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/f4.png">
         <p><b>MATCHA LATTE FRAP</b></p>
-        <p id="price"><i>149 PHP - 22oz</i></p><br>
-        <button type="matchafrap" id="matchafrapcart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add
+        <p id="price"><i>₱149 - 22oz</i></p><br>
+        <button type="matchafrap" id="f4" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add
             to Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/f5.png">
         <p><b>CHARCOAL LATTE FRAP</b></p>
-        <p id="price"><i>149 PHP - 22oz</i></p> <br>
-        <button type="charcoalfrap" id="charcoalfrapcart" class="cartbutton"><img id="cart"
-                src="menu/shopping-cart.png">Add to Cart</button>
+        <p id="price"><i>₱149 - 22oz</i></p> <br>
+        <button type="charcoalfrap" id="f5" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+            Cart</button>
     </div>
 
     <br><br>
     <hr>
     <h2>LEMONADE</h2>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/l1.png">
         <p><b>ICED LEMONADE</b></p>
-        <p id="price"><i>99 PHP - 22oz</i></p><br>
-        <button type="lemon" id="lemoncart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <p id="price"><i>₱99 - 22oz</i></p><br>
+        <button type="lemon" id="l1" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/l2.png">
         <p><b>YAKULT LEMONADE</b></p>
-        <p id="price"><i>129 PHP - 22oz</i></p><br>
-        <button type="ylemon" id="ylemoncart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <p id="price"><i>₱129 - 22oz</i></p><br>
+        <button type="ylemon" id="l2" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
-    <div class="container">
+    <div class="listProduct">
         <img id="menupic" src="menu/l3.png">
         <p><b>ICED ESPRESSO LEMONADE</b></p>
-        <p id="price"><i>149 PHP - 22oz</i></p>
-        <button type="ielemon" id="ielemoncart" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
+        <p id="price"><i>₱149 - 22oz</i></p>
+        <button type="ielemon" id="l3" class="cartbutton"><img id="cart" src="menu/shopping-cart.png">Add to
             Cart</button>
     </div>
     <hr>
-    <div class="mycart">
-        <div class="cartList">
-            CART LIST:
-        </div>
-        <div class="itemList">
-            <img id="cartimg" src="menu/b1.jpg">
-            <label id="itemName">Garlic Cream Cheese Bomb</label>
-        </div>
-
-    </div>
-    <div class="mycheckout">
 
     </div>
     <footer>
@@ -168,6 +193,7 @@
     <div class="foot">
         <p>SERVING SINCE @2021</p>
     </div>
+    <script src="cafeordering.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "b1",
+        "name": "GARLIC CREAM CHEESE BOMB",
+        "price": 89,
+        "image": "menu/b1.jpg"
+    },
+    {
+        "id": "b2",
+        "name": "HAM & CHEESE SANDWICH",
+        "price": 129,
+        "image": "menu/b2.jpg"
+    },
+    {
+        "id": "b3",
+        "name": "HAWAIIAN PIZA",
+        "price": 149,
+        "image": "menu/b3.jpg"
+    },
+    {
+        "id": "b4",
+        "name": "PEPPERONI PIZZA",
+        "price": 149,
+        "image": "menu/b4.png"
+    },
+    {
+        "id": "b5",
+        "name": "4pc. MOZZARELLA STICKS",
+        "price": 99,
+        "image": "menu/b5.jpg"
+    }
+]
