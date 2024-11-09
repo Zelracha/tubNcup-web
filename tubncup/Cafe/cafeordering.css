@@ -6,9 +6,6 @@
 
 }
 
-
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -99,24 +96,24 @@ label {
     margin: 20px;
 }
 
-.container {
-    display: inline-block;
+.listProduct {
+    display: grid;
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+
+}
+
+.listProduct .item {
+    background-color: aliceblue;
     width: 170px;
     height: 250px;
-    background-color: rgba(233, 233, 233, 1);
     padding: 10px;
     border: 1px solid;
     text-align: left;
     border-radius: 10px;
     margin: 10px 0px 10px 10px;
-    font-family: "Lato", sans-serif;
-    font-size: 12px;
-
-}
-
-.container select {
-    border-radius: 8px;
-    width: 100px;
 }
 
 .openCart img {
@@ -313,7 +310,7 @@ h4 {
         margin-top: 160px;
     }
 
-    .container {
+    .listProduct {
         width: 150px;
         height: 250px;
 
