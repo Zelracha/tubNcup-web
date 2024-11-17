@@ -13,7 +13,7 @@
     },
     {
         "id": "b3",
-        "name": "HAWAIIAN PIZZA",
+        "name": "HAWAIIAN PIZA",
         "price": 149,
         "image": "menu/b3.jpg"
     },
@@ -26,7 +26,7 @@
     {
         "id": "b5",
         "name": "PEPPERONI PIZZA",
-        "price": 149,
+        "price": 99,
         "image": "menu/b5.jpg"
     },
     {
@@ -37,8 +37,45 @@
     },
     {
         "id": "f1",
-        "name": "FRAP",
+        "name": "CREME BRULEE LATTE FRAP",
         "price": 99,
-        "image": "menu/b6.jpg"
+        "image": "menu/f1.png"
+    },{
+        "id": "f2",
+        "name": "RED VELVET LATTE FRAP",
+        "price": 99,
+        "image": "menu/f2.png"
+    },{
+        "id": "f3",
+        "name": "CARAMEL LATTE FRAP",
+        "price": 99,
+        "image": "menu/f3.png"
+    },{
+        "id": "f4",
+        "name": "MATCHA LATTE FRAP",
+        "price": 99,
+        "image": "menu/f4.png"
+    },{
+        "id": "f5",
+        "name": "CHARCOAL LATTE FRAP",
+        "price": 99,
+        "image": "menu/f5.png"
+    },{
+        "id": "l1",
+        "name": "ICED LEMONADE",
+        "price": 99,
+        "image": "menu/l1.png"
+    },{
+        "id": "l2",
+        "name": "ICED YAKULT LEMONADE",
+        "price": 99,
+        "image": "menu/l2.png"
+    },{
+        "id": "l3",
+        "name": "ICED ESPRESSO LEMONADE",
+        "price": 99,
+        "image": "menu/l3.png"
     }
+
+
 ]

@@ -2,8 +2,10 @@ let opencartBtn = document.querySelector('.opencartBtn');
 let closeCart = document.querySelector('.close');
 let body = document.querySelector('body');
 let listProductHTML = document.querySelector('.listProduct');
+let listCartHTML = document.querySelector('.cartList');
 
 let listProducts = [];
+let carts = [];
 
 opencartBtn.addEventListener('click', () => {
     body.classList.toggle('showCart')
@@ -14,9 +16,10 @@ closeCart.addEventListener('click', () => {
 const addDatatoHTML = () => {
     listProductHTML.innerHTML = '';
     if (listProducts.length > 0) {
-        listProducts.forEach(product => {
+        listProducts.forEach(product => { 
             let newProduct = document.createElement('div');
-            newProduct.classList.add('item');
+            newProduct.classList.add('productItem');
+            newProduct.dataset.id = product.id;
             newProduct.innerHTML = `
             <img id="menupic" src=${product.image}>
             <p><b>${product.name}</b></p>
@@ -29,6 +32,100 @@ const addDatatoHTML = () => {
         })
     }
 }
+listProductHTML.addEventListener('click',(event)=> {
+    let positionClick = event.target;
+    if(positionClick.classList.contains('cartbutton')){
+        let product_id = positionClick.parentElement.dataset.id;
+        addToCart(product_id);
+    }
+})
+
+const addToCart = (product_id) => {
+    // Find the product from listProducts using the product_id
+    let product = listProducts.find(p => p.id == product_id);
+
+    if (product) {
+        // Check if the product is already in the cart
+        let positionThisProductInCart = carts.findIndex((item) => item.product_id == product_id);
+
+        if (positionThisProductInCart < 0) {
+            // Add product to cart if not already there
+            carts.push({
+                product_id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            });
+        } else {
+            // Update quantity if product is already in the cart
+            carts[positionThisProductInCart].quantity += 1;
+        }
+    }
+
+    addCartToHTML();  // Update cart display
+
+};
+
+
+const addCartToHTML = () => {
+    listCartHTML.innerHTML = '';  // Clear cart
+    if (carts.length > 0) {
+        carts.forEach(cartItem => {
+            let newCartItem = document.createElement('div');
+            newCartItem.classList.add('item');
+            newCartItem.dataset.id = cartItem.product_id;  // Add the data-id for each cart item
+            newCartItem.innerHTML = `
+                <div class="image">
+                    <img src="${cartItem.image}" alt="${cartItem.name}">
+                </div>
+                <div class="name">${cartItem.name}</div>
+                <div class="totalPrice">₱${cartItem.price * cartItem.quantity}</div>
+                <div class="quantity">
+                    <span class="minus">-</span>
+                    <span>${cartItem.quantity}</span>
+                    <span class="plus">+</span>
+                </div>
+            `;
+            listCartHTML.appendChild(newCartItem);
+        });
+    } else {
+        listCartHTML.innerHTML = "<p>Your cart is empty</p>";
+    }
+}
+listCartHTML.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if(positionClick.classList.contains('minus')|| positionClick.classList.contains('plus')){
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = 'minus';
+        if(positionClick.classList.contains('plus')){
+            type = 'plus';
+        }
+        changeQuantityCart(product_id, type);
+    }
+})
+const changeQuantityCart = (product_id, type) => {
+    let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+    if(positionItemInCart >= 0){
+        
+        switch (type) {
+            case 'plus':
+                carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
+                break;
+        
+            default:
+                let valueChange = carts[positionItemInCart].quantity - 1;
+                if (valueChange > 0) {
+                    carts[positionItemInCart].quantity = valueChange;
+                }else{
+                    carts.splice(positionItemInCart, 1);
+                }
+                break;
+        }
+    }
+    addCartToHTML();
+
+}
 
 const initApp = () => {
     // get data product
@@ -37,6 +134,8 @@ const initApp = () => {
         .then(data => {
             listProducts = data;
             addDatatoHTML();
+
+           
 
         })
 }
