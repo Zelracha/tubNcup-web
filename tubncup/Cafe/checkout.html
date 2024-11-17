@@ -23,8 +23,11 @@
         </nav>
     </header>
     <div class="container">
-        <button class="back" ><a href="cafeordering.html"><img src="icons/return.png">Return to Orders</a></button>
-        <div class="checkoutLayout">
+        <a href="cafeordering.html" class="back">
+            <img src="icons/return.png" alt="Return Icon">
+            Return to Orders
+        </a>
+                <div class="checkoutLayout">
             <div class="returnCheckout">
 
 
@@ -43,12 +46,38 @@
             </div>
             <div class="right">
                 <h1>CHECK OUT</h1>
-                <div class="form">
+                <p>* Notice: Items are for pick-up only.</p>
+                <div class="form" action="#" method="post">
                     <div class="group">
-                        <label for="">Full Name</label><input type="text" name="" id="">
+                        <label for="">Full Name</label><input type="text" name="pangalan" id="pangalan" required>
                     </div>
                     <div class="group">
-                        <label for="">Phone Number</label><input type="text" name="" id="">
+                        <label for="numero">Phone Number</label><input type="text" name="numero" id="numero" required>
+                    </div>
+                
+                    <div class="pickup"> 
+                        <label for="">Pick-up Time: </label>
+                        <select name="" id="" required>
+                            <option value="" disabled selected>Select a time</option>
+                            <option value="9:30 AM">9:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="2:30 PM">2:30 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="3:30 PM">3:30 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="4:30 PM">4:30 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="5:30 PM">5:30 PM</option>
+                            <option value="6:00 PM">6:00 PM</option>
+                        </select>
                     </div>
                 </div>
                 <div class="return">
@@ -61,8 +90,8 @@
                         <div class="totalPrice">900</div>
                     </div>
                 </div>
-                <button class="buttonCheckOut">
-                    CHECKOUT
+                <button class="buttonCheckOut" type="submit">
+                    CHECKOUT    
                 </button>
             </div>
         </div>

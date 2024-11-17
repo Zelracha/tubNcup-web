@@ -55,24 +55,44 @@ body {
     background-color: rgba(217, 217, 217, 1);
 
 }
-.back{
+/* Button style */
+.back {
     border-radius: 10px;
     margin: 10px;
     border: 1px solid black;
-    height: 30px;
+    height: 40px; /* Increase height for better text-image alignment */
     width: 170px;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
     background-color: rgba(228, 194, 103, 1);
+    align-items: center;  /* Vertically center content */
+    display: flex;         /* Use flexbox to center both text and image */
+    justify-content: center; /* Center content horizontally */
 }
+
+/* Link inside the button */
+.container a {
+    text-decoration: none;   /* Remove underline */
+    color: inherit;          /* Inherit color from .back */
+    display: flex;           /* Make <a> a flex container */
+    align-items: center;     /* Center the text and image vertically */
+    justify-content: center; /* Center the text and image horizontally */
+    height: 40px; /* Increase height for better text-image alignment */
+    width: 170px;           /* Make <a> fill the entire button */
+}
+
+/* Image inside the link */
 .back img {
-    height: 20px;
-    margin: 2px;
+    height: 20px;            /* Set the image size */
+    margin-right: 8px;       /* Space between the image and text */
+    vertical-align: middle;  /* Ensure image is vertically aligned */
 }
+
 h1 {
     font-size: 30px;
     margin: 20px;
+    text-align: center;
 }
 .checkoutLayout {
     display: grid;
@@ -91,7 +111,8 @@ h1 {
     padding: 0 10px;
     border: 1px solid black;
     border-radius: 10px;
-    max-width: 400px;
+    height: 55px;
+    width: 500px;
     margin-left: 20px;
     
 }
@@ -106,7 +127,13 @@ h1 {
 .checkoutLayout .right {
     background-color: rgba(228, 194, 103, 1);
     border-radius: 20px;
-    padding: 40px;
+    padding: 10px 20px 20px 20px ;
+}
+.right p {
+    width: 100%;
+    text-align: center;
+    color: rgb(190, 0, 0);
+    margin-bottom: 20px;
 }
 .checkoutLayout .right .form {
     display: grid;
@@ -121,14 +148,35 @@ h1 {
     grid-column-end: 3;
 }
 
-.checkoutLayout .form input {
+.checkoutLayout .form input, select {
     width: 100%;
     padding: 10px 20px;
     box-sizing: border-box;
-    margin-top: 20px;
+    margin-top: 10px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: rgb(221, 206, 163);
+}
+.checkoutLayout .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.checkoutLayout .row div:nth-child(2) {
+    font-weight: bold;
+    font-size: large;
+}
+.buttonCheckOut{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: rgba(35, 31, 32, 1);
+    color: antiquewhite;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

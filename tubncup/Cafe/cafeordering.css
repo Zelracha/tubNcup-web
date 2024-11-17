@@ -13,19 +13,19 @@ header {
     align-items: center;
     position: relative;
     background-color: rgba(35, 31, 32, 1);
-    height: 50px;
+    height: 80px;
     width: 100%;
 }
 
 .logo {
-    width: max(300px, 18vw);
+    width: max(200px, 15vw);
     aspect-ratio: 30 / 5;
 }
 
 nav {
     width: 50%;
     max-width: 500px;
-    height: 50px;
+
 }
 
 nav>ul {

@@ -64,8 +64,12 @@ const addToCart = (product_id) => {
     }
 
     addCartToHTML();  // Update cart display
+    addCartoToMemory();
 
 };
+const addCartoToMemory = () => {
+    localStorage.setItem('cart', JSON.stringify(carts));
+}
 
 
 const addCartToHTML = () => {
@@ -135,7 +139,10 @@ const initApp = () => {
             listProducts = data;
             addDatatoHTML();
 
-           
+           if(localStorage.getItem('cart')){
+            carts = JSON.parse(localStorage.getItem('cart'));
+            addCartToHTML();
+           }
 
         })
 }
