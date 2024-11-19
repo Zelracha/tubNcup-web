@@ -2,46 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="trystyles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Tub N' Cup</title>
 </head>
 <body>
-    <header>
-        <img src="icons/tnclogo.PNG" class="logo" alt="">
-        <nav>
-            <ul>
-                <li><a href="../Landing/try.html"><b>Home</b></a></li>
-                <li><a href="../Booking/booking.html">Reserve a Schedule</a></li>
-                <li><a href="../Cafe/cafeordering.html">Cafe Order</a></li>
-            </ul>
-        </nav>
+    <header class="main-header">
+        <div class="header-content">
+            <img src="../Cafe/icons/tnclogo.PNG" class="logo" alt="Tub N' Cup Logo">
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../Landing/try.html">Home</a></li>
+                    <li><a href="../Booking/booking.html">Reserve a Schedule</a></li>
+                    <li><a href="#Order"><b>Cafe Order</b></a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
- <div class="container">
-    <div class="content-container">
-        <div class="right-container">
-            <img src="../Cafe/menu/b3.jpg" alt="" id="img-1">
-            <img src="../Cafe/icons/instagram.png" alt="" id="img-2">
-            <img src="../Cafe/icons/instagram.png" alt="" id="img-3">
-            <img src="../Cafe/icons/instagram.png" alt="" id="img-4">
+    <main class="main-container">
+        <div class="content-wrapper">
+            <div class="content-layout">
+                <h1 class="main-heading">We are the 𝐅𝐈𝐑𝐒𝐓 pet grooming café
+                    in Pasig City to give your fur babies
+                    a PAWmazing experience.</h1>
+
+                <div class="gallery-grid">
+                    <img src="../Cafe/menu/b3.jpg" alt="Gallery image 1" class="gallery-img">
+                    <img src="../Cafe/icons/instagram.png" alt="Gallery image 2" class="gallery-img">
+                    <img src="../Cafe/icons/instagram.png" alt="Gallery image 3" class="gallery-img">
+                    <img src="../Cafe/icons/instagram.png" alt="Gallery image 4" class="gallery-img">
+                </div>
+            </div>
+
+            <section class="action-section">
+                <div class="button-group">
+                    <button type="button" class="btn">Reserve Slot</button>
+                    <button type="button" class="btn">Pickup Coffee</button>
+                </div>
+                <button type="button" class="btn btn-center">Grooming Pricelist</button>
+            </section>
+
+            <footer class="page-footer">
+                <div class="paw-border"></div>
+                <h2 class="footer-heading">GIVE YOUR FUR BABY A TREAT!</h2>
+            </footer>
         </div>
-        <h1 class="heading">We are the 𝐅𝐈𝐑𝐒𝐓 pet grooming café
-            in Pasig City to give your fur babies
-            a PAWmazing experience.</h1>
-        <div class="button-left">
-            <button type="button" class="button-style"> <a href="../Booking/booking.html">Book a Slot</a> </button>
-            <button type="button" class="button-style"> <a href="../Cafe/cafeordering.html">Pickup Coffee</a> </button>
-        </div>
-        <button type="button" id="center-button" class="button-style"><a href="icons/grooming prices.jpg"> Grooming Pricelist</a></button>
-        <div class="pawPicture">
-        </div>
-        <h2 class="h2Footer">GIVE YOUR FUR BABY A TREAT!</h2>
-</div>
+    </main>
 </body>
 </html>
