@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="checkout.css">
-    <title>Document</title>
+    <title>Checkout</title>
 </head>
 <body>
     <header>
-        <img src="icons/tnclogo.PNG" class="logo" alt="">
+        <img src="icons/tnclogo.PNG" class="logo" alt="Logo">
         <nav>
             <ul>
                 <li><a href="../Landing/try.html">Home</a></li>
@@ -27,21 +27,11 @@
             <img src="icons/return.png" alt="Return Icon">
             Return to Orders
         </a>
-                <div class="checkoutLayout">
+        <div class="checkoutLayout">
             <div class="returnCheckout">
-
-
                 <h1>CART PRODUCTS</h1>
                 <div class="list">
-                    <div class="item">
-                        <img src="menu/b1.jpg">
-                        <div class="info">
-                            <div class="name">PRODUCT NAME</div>
-                            <div class="price">P99</div>
-                        </div>
-                        <div class="quantity">1</div>
-                        <div class="returnPrice">P900</div>
-                    </div>
+                    <!-- Dynamically generated cart items will appear here -->
                 </div>
             </div>
             <div class="right">
@@ -49,13 +39,12 @@
                 <p>* Notice: Items are for pick-up only.</p>
                 <div class="form" action="#" method="post">
                     <div class="group">
-                        <label for="">Full Name</label><input type="text" name="pangalan" id="pangalan" required>
+                        <label for="">Full Name:</label><input type="text" name="pangalan" id="pangalan" required>
                     </div>
                     <div class="group">
-                        <label for="numero">Phone Number</label><input type="text" name="numero" id="numero" required>
+                        <label for="numero">Phone Number:</label><input type="text" name="numero" id="numero" required>
                     </div>
-                
-                    <div class="pickup"> 
+                    <div class="pickup">
                         <label for="">Pick-up Time: </label>
                         <select name="" id="" required>
                             <option value="" disabled selected>Select a time</option>
@@ -79,15 +68,24 @@
                             <option value="6:00 PM">6:00 PM</option>
                         </select>
                     </div>
+                    <div class="mop">
+                        <label for="" id="" required>Mode of Payment:</label>
+                        <select name="" id="mop">
+                            <option value="" disabled selected>Select payment method</option>
+                            <option value="cash payment">Cash Payment</option>
+                            <option value="gcash">Gcash</option>
+                            <option value="bpi">Bank Transfer: BPI</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="return">
                     <div class="row">
                         <div>Total Products</div>
-                        <div class="totalQuantity">2</div>
+                        <div class="totalQuantity">0</div>
                     </div>
                     <div class="row">
                         <div>Total Price</div>
-                        <div class="totalPrice">900</div>
+                        <div class="totalPrice">0</div>
                     </div>
                 </div>
                 <button class="buttonCheckOut" type="submit">
@@ -96,5 +94,54 @@
             </div>
         </div>
     </div>
+    <script src="cafeordering.js"></script>
+    <script>
+        // Add this script to dynamically load cart from localStorage and display in checkout.html
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartFromStorage();
+        });
+
+        function loadCartFromStorage() {
+            const cartData = localStorage.getItem('cart');
+            if (cartData) {
+                const carts = JSON.parse(cartData); // Get cart data from localStorage
+                displayCartItems(carts);
+                updateTotal(carts);
+            }
+        }
+
+        function displayCartItems(carts) {
+            const listContainer = document.querySelector('.list');
+            listContainer.innerHTML = ''; // Clear the existing content
+
+            carts.forEach(cartItem => {
+                const cartElement = document.createElement('div');
+                cartElement.classList.add('item');
+                cartElement.innerHTML = `
+                    <img src="${cartItem.image}" alt="${cartItem.name}">
+                    <div class="info">
+                        <div class="name">${cartItem.name}</div>
+                    </div>
+                    <div class="quantity">${cartItem.quantity}</div>
+                    <div class="returnPrice">₱${cartItem.price * cartItem.quantity}</div>
+                `;
+                listContainer.appendChild(cartElement);
+            });
+        }
+
+        function updateTotal(carts) {
+            let totalQuantity = 0;
+            let totalPrice = 0;
+
+            carts.forEach(cartItem => {
+                totalQuantity += cartItem.quantity;
+                totalPrice += cartItem.price * cartItem.quantity;
+            });
+
+            document.querySelector('.totalQuantity').innerText = totalQuantity;
+            document.querySelector('.totalPrice').innerText = totalPrice;
+        }
+    </script>
 </body>
 </html>

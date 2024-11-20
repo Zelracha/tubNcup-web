@@ -3,8 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: "Lato", sans-serif;
-
-
 }
 
 header {
@@ -25,7 +23,6 @@ header {
 nav {
     width: 50%;
     max-width: 500px;
-
 }
 
 nav>ul {
@@ -38,7 +35,6 @@ nav>ul {
     height: 100%;
     gap: 30px;
     font-family: "Lato", sans-serif;
-
 }
 
 nav>ul>li {
@@ -53,7 +49,6 @@ li>a {
 
 body {
     background-color: rgba(217, 217, 217, 1);
-
 }
 
 h1 {
@@ -68,12 +63,10 @@ h1 {
     cursor: pointer;
     align-items: center;
     margin: 0 auto;
-    position: absolute; /* This will allow the button to be positioned at the bottom */
-    bottom: 10px; /* Adjust this value to control the button's distance from the bottom */
-   
-    
+    position: absolute;
+    bottom: 10px;
+    width: 120px;
 }
-
 
 button:hover {
     background-color: #a28941;
@@ -89,14 +82,16 @@ label {
     margin: 20px;
 }
 
+/* List product display */
 .listProduct {
-    display:grid;
+    display: grid;
     font-family: "Lato", sans-serif;
     margin: 20px;
     justify-content: center;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
+
 .productItem {
     width: 170px;
     height: 260px;
@@ -111,12 +106,34 @@ label {
     position: relative;
 }
 
+.productItem img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
 
+.productItem .product-name {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
 
+.productItem .product-price {
+    color: #6d5200;
+    margin-top: 5px;
+}
+
+.productItem .cartbutton {
+    margin-top: 10px;
+    margin-left: 13px;
+}
+
+/* Open cart button styles */
 .openCart img {
     height: 15px;
     margin-right: 3px;
-
 }
 
 .openCart {
@@ -124,7 +141,6 @@ label {
     align-items: center;
     text-align: center;
     margin-top: 5px;
-
 }
 
 .opencartBtn {
@@ -136,6 +152,7 @@ label {
     background-color: rgba(228, 194, 103, 1);
 }
 
+/* Cart container styles */
 .cartContainer {
     width: 350px;
     background-color: rgba(35, 31, 32, 1);
@@ -178,6 +195,11 @@ body.showCart .cartContainer {
     background-color: rgb(200, 200, 200);
 }
 
+.checkOut a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .cartContainer .cartList .item img {
     width: 100%;
     margin-left: 5px;
@@ -189,6 +211,7 @@ body.showCart .cartContainer {
     gap: 10px;
     text-align: center;
     align-items: center;
+    margin-top: 2px;
 }
 
 .cartList .quantity span {
@@ -208,7 +231,6 @@ body.showCart .cartContainer {
 
 .cartList .item:nth-child(even) {
     background-color: rgb(40, 38, 39);
-
 }
 
 .cartList {
@@ -222,18 +244,14 @@ body.showCart .cartContainer {
 #cart {
     width: 15px;
     height: 15px;
-    margin-right: 7px
+    margin-right: 7px;
 }
-
 
 h2 {
     margin-left: 20px;
     margin-top: 10px;
     font-family: "Lato", sans-serif;
-
 }
-
-
 
 footer {
     background-color: rgba(228, 194, 103, 1);
@@ -255,7 +273,6 @@ h4 {
     margin-right: 15px;
     margin-left: 15px;
     margin-top: 10px;
-
 }
 
 .foot {
@@ -274,8 +291,6 @@ h4 {
     height: 15px;
 }
 
-
-
 #menupic {
     width: 150px;
     height: 150px;
@@ -283,7 +298,9 @@ h4 {
     border: 1px solid;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
+   
     header {
         flex-direction: column;
         height: auto;
@@ -304,10 +321,8 @@ h4 {
         width: 100%;
         aspect-ratio: 30 / 5;
     }
-
     h1 {
         font-size: 20px;
-   
     }
 
     #menupic {
@@ -318,12 +333,16 @@ h4 {
     .cartbutton {
         margin-top: 10px;
     }
+
     .listProduct {
         grid-template-columns: repeat(2, 1fr);
-
     }
-    .productItem{
+
+    .productItem {
         width: 150px;
         height: 250px;
+    }
+    .productItem .cartbutton {
+        margin-left: 5px;
     }
 }

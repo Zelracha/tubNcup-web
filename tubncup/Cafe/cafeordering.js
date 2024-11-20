@@ -94,7 +94,7 @@ const addCartToHTML = () => {
             listCartHTML.appendChild(newCartItem);
         });
     } else {
-        listCartHTML.innerHTML = "<p>Your cart is empty</p>";
+        listCartHTML.innerHTML = '<p style="text-align: center; align-items: center; padding: 20px;">Your cart is empty</p>';
     }
 }
 listCartHTML.addEventListener('click', (event) => {
@@ -128,6 +128,7 @@ const changeQuantityCart = (product_id, type) => {
         }
     }
     addCartToHTML();
+    addCartoToMemory();
 
 }
 
