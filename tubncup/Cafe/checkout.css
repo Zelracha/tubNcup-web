@@ -99,20 +99,22 @@ h1 {
     grid-template-columns: repeat(2,1fr);
     gap: 100px;
     padding: 20px;
-    margin-left: 20px;
+    margin-top: px;
 }
 .item {
     background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 80px 1fr 50px 80px;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 8px;
+    gap: 20px;
+    margin-bottom: 30px;
     padding: 0 10px;
     border: 1px solid black;
     border-radius: 10px;
     height: 55px;
     width: 500px;
+    margin-left: 20px;
+    
 }
 .item img {
     height: 45px;
@@ -126,8 +128,6 @@ h1 {
     background-color: rgba(228, 194, 103, 1);
     border-radius: 20px;
     padding: 10px 20px 20px 20px ;
-    width: 500px;
-    height: fit-content;
 }
 .right p {
     width: 100%;
@@ -137,13 +137,16 @@ h1 {
 }
 .checkoutLayout .right .form {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
     border-bottom: 1px solid black;
     padding-bottom: 20px;
 
 }
-
+.checkoutLayout .form .group:nth-child(-n+3){
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
 
 .checkoutLayout .form input, select {
     width: 100%;
@@ -197,62 +200,7 @@ h1 {
         width: 100%;
         aspect-ratio: 30 / 5;
     }
-
-    /* Modified checkout layout for mobile */
     .checkoutLayout {
-        grid-template-columns: 1fr;  /* Change to single column */
-        gap: 30px;                   /* Reduce gap for mobile */
-        padding: 10px;
-        margin: 0;                   /* Reset margin */
-        display: flex;               /* Change to flex */
-        flex-direction: column;      /* Stack items vertically */
-        align-items: center;         /* Center items horizontally */
-    }
-
-    /* Center items and adjust width */
-    .item {
-        width: 90%;                  /* Make responsive width */
-        max-width: 300px;           /* Maximum width */
-        margin: 10px auto;          /* Center horizontally with auto margins */
-        grid-template-columns: 60px 1fr 40px 60px; /* Adjust column sizes for mobile */
-        gap: 10px;                  /* Reduce gap for mobile */
-    }
-
-    /* Adjust right section for mobile */
-    .checkoutLayout .right {
-        width: 90%;                 /* Make responsive width */
-        max-width: 300px;          /* Maximum width */
-        margin: 0 auto;            /* Center horizontally */
-        padding: 15px;             /* Adjust padding for mobile */
-    }
-
-    /* Adjust form layout for mobile */
-    .checkoutLayout .right .form {
-        grid-template-columns: 1fr; /* Single column for mobile */
-        gap: 15px;
-    }
-
-    /* Reset grid column settings for mobile */
-    .checkoutLayout .form .group {
-        grid-column: auto;
-    }
-
-    /* Adjust image size for mobile */
-    .item img {
-        height: 35px;              /* Smaller images for mobile */
-    }
-
-    /* Adjust text sizes for mobile */
-    .returnCheckout .item .name,
-    .returnCheckout .item .returnPrice {
-        font-size: 13px;
-    }
-    .back {
-        width: 120px;
-    }
-    .container a {
-        width: 120px;
-        font-size: 12px;
-        padding-left: 10px;
+        grid-template-columns: repeat(1, 1fr);
     }
 }

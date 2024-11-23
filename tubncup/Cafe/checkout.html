@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="checkout.css">
     <title>Checkout</title>
 </head>
@@ -37,16 +35,18 @@
             <div class="right">
                 <h1>CHECK OUT</h1>
                 <p>* Notice: Items are for pick-up only.</p>
-                <div class="form" action="#" method="post">
+                <form class="form" id="checkoutForm" action="orderinput.php" method="POST">
                     <div class="group">
-                        <label for="">Full Name:</label><input type="text" name="pangalan" id="pangalan" required>
+                        <label for="pangalan">Full Name:</label>
+                        <input type="text" name="fullname" id="pangalan" required>
                     </div>
                     <div class="group">
-                        <label for="numero">Phone Number:</label><input type="text" name="numero" id="numero" required>
+                        <label for="numero">Phone Number:</label>
+                        <input type="text" name="number" id="numero" required>
                     </div>
                     <div class="pickup">
-                        <label for="">Pick-up Time: </label>
-                        <select name="" id="" required>
+                        <label for="pickupTime">Pick-up Time: </label>
+                        <select name="timePickup" id="pickupTime" required>
                             <option value="" disabled selected>Select a time</option>
                             <option value="9:30 AM">9:30 AM</option>
                             <option value="10:00 AM">10:00 AM</option>
@@ -69,15 +69,16 @@
                         </select>
                     </div>
                     <div class="mop">
-                        <label for="" id="" required>Mode of Payment:</label>
-                        <select name="" id="mop">
+                        <label for="mop">Mode of Payment:</label>
+                        <select name="payment" id="mop" required>
                             <option value="" disabled selected>Select payment method</option>
-                            <option value="cash payment">Cash Payment</option>
+                            <option value="cashPayment">Cash Payment</option>
                             <option value="gcash">Gcash</option>
                             <option value="bpi">Bank Transfer: BPI</option>
                         </select>
                     </div>
-                </div>
+                    <input type="hidden" name="cart_items" id="cart_items">
+                </form>
                 <div class="return">
                     <div class="row">
                         <div>Total Products</div>
@@ -85,10 +86,10 @@
                     </div>
                     <div class="row">
                         <div>Total Price</div>
-                        <div class="totalPrice">0</div>
+                        <div class="totalPrice">₱0</div>
                     </div>
                 </div>
-                <button class="buttonCheckOut" type="submit">
+                <button class="buttonCheckOut" type="button">
                     CHECKOUT    
                 </button>
             </div>
@@ -96,16 +97,55 @@
     </div>
     <script src="cafeordering.js"></script>
     <script>
-        // Add this script to dynamically load cart from localStorage and display in checkout.html
-
         document.addEventListener('DOMContentLoaded', function() {
             loadCartFromStorage();
+
+            document.querySelector('.buttonCheckOut').addEventListener('click', function(e) {
+                // Validate form
+                const form = document.getElementById('checkoutForm');
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                // Prepare cart data
+                const cartData = localStorage.getItem('cart');
+                if (!cartData || JSON.parse(cartData).length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+
+                // Set cart items in hidden input
+                document.getElementById('cart_items').value = cartData;
+
+                // Create FormData
+                const formData = new FormData(form);
+
+                // Submit form via fetch
+                fetch('orderinput.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Clear cart and redirect
+                        localStorage.removeItem('cart');
+                        window.location.href = 'order-confirmation.html';
+                    } else {
+                        throw new Error('Order submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was a problem submitting your order. Please try again.');
+                });
+            });
         });
 
         function loadCartFromStorage() {
             const cartData = localStorage.getItem('cart');
             if (cartData) {
-                const carts = JSON.parse(cartData); // Get cart data from localStorage
+                const carts = JSON.parse(cartData);
                 displayCartItems(carts);
                 updateTotal(carts);
             }
@@ -113,7 +153,7 @@
 
         function displayCartItems(carts) {
             const listContainer = document.querySelector('.list');
-            listContainer.innerHTML = ''; // Clear the existing content
+            listContainer.innerHTML = '';
 
             carts.forEach(cartItem => {
                 const cartElement = document.createElement('div');
@@ -124,7 +164,7 @@
                         <div class="name">${cartItem.name}</div>
                     </div>
                     <div class="quantity">${cartItem.quantity}</div>
-                    <div class="returnPrice">₱${cartItem.price * cartItem.quantity}</div>
+                    <div class="returnPrice">₱${(cartItem.price * cartItem.quantity).toFixed(2)}</div>
                 `;
                 listContainer.appendChild(cartElement);
             });
@@ -140,7 +180,7 @@
             });
 
             document.querySelector('.totalQuantity').innerText = totalQuantity;
-            document.querySelector('.totalPrice').innerText = totalPrice;
+            document.querySelector('.totalPrice').innerText = `₱${totalPrice.toFixed(2)}`;
         }
     </script>
 </body>
