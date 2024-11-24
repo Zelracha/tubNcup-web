@@ -94,8 +94,12 @@ const addCartToHTML = () => {
             listCartHTML.appendChild(newCartItem);
         });
     } else {
-        listCartHTML.innerHTML = "<p>Your cart is empty</p>";
+        listCartHTML.innerHTML = '<div class="no-item-msg"> <img class="empty-cart-image" src="icons/empty-cart.png" alt="Cart is empty"> <br><p>Your cart is empty.</p></div>';
+        
+        // Add a class to the element
+        listCartHTML.classList.add("empty-cart-message");
     }
+    
 }
 listCartHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
@@ -128,6 +132,8 @@ const changeQuantityCart = (product_id, type) => {
         }
     }
     addCartToHTML();
+    addCartoToMemory();
+
 
 }
 

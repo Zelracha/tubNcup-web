@@ -366,4 +366,12 @@ h4 {
         width: 100%;
         aspect-ratio: 30 / 5;
     }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-img {
+        width: 160px;
+        height: 160px;
+    }
 }
