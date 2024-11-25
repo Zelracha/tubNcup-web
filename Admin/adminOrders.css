@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gothic A1', sans-serif;
+    background-color: #ECEBE7; 
+}
+.gothic-medium {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+    letter-spacing: 7px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+nav  {
+    background: #231F20;
+    height: 80px;
+    width:100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 20px;
+}
+
+.logo {
+    height: 50px;  
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+    margin-right: 50px;
+}
+
+nav ul li {
+    line-height: 80px;
+}
+
+nav ul li a {
+    color: #E4C267;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+.list {
+    float: left;
+    list-style: none;
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    gap: 40px; 
+    margin-left: 40px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+        color: #231F20;
+        text-decoration: none;
+    
+}
+
+.jetbrains-mono-Regular {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+}
+.top-text {
+    font-size: 16px;
+    font-family: 'Gothic A1', sans-serif;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-align: left;
+    width: 100%; 
+    padding-left: 26px; 
+}
+
+
+.bold-link {
+    font-weight: bold;
+}
+
+hr {
+    border: none; 
+    height: 2px;
+    width: 100%;
+    background-color: black; 
+    margin-left: 38px;
+    margin-right: 38px;
+    margin-top: 80px;
+    width: calc(100% - 76px);
+    display: block; 
+}
+
+ .container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: 21px;
+    padding: 19px;
+}
+.box-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(25% - 20px); 
+    margin-bottom: 30px;
+}
+.box {
+    text-align: left; 
+    width: 85%;
+    height: auto;
+    background-color: #D9D9D9;
+    padding: 20px;
+    border: 2px solid black;
+
+}
+
+.buttons {
+    margin-top: 10px; 
+    justify-content: flex-start;
+    display: flex;
+    gap: 223px;
+}
+
+button {
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.check-btn {
+    color: black;
+   background-color: #A6BFAA;
+}
+
+.x-btn {
+    color: black;
+    background-color: #BFA8A6;
+}
+
+.button-box.left {
+    margin-right: 275px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.button-box.right {
+    margin-left: 275px; 
+    margin-top: 10px;
+    display: flex;
+}
+
+.customer-name, .contact-number, .order-title, .order-item, .total {
+    margin: 5px 0; 
+    font-size: 15px;
+}
+
+.order-code {
+    text-align: center; 
+    font-size: 15px; 
+    font-weight: bold; 
+    margin: 10px 0;
+}
